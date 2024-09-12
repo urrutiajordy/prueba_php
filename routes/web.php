@@ -15,7 +15,8 @@
 
 $router->get('/healthy', function(){return 'Hello world';});
 $router->get('/cuentas', 'RequestBankController@cuentas');
-$router->post('/cuentas/{id}/depositar', 'RequestBankController@cuentas');
-$router->post('/cuentas/{id}/retirar', 'RequestBankController@cuentas');
-$router->post('/cuentas/{id}/transferir', 'RequestBankController@cuentas');
-$router->get('/cuentas/{id}', 'RequestBankController@cuentas');
+$router->post('/cuentas/{uid}/depositar', 'RequestBankController@procesar_deposito');
+$router->post('/cuentas/{uid}/retirar', 'RequestBankController@procesar_retiro');
+$router->post('/cuentas/{uid}/transferir', 'RequestBankController@procesar_transferencia');
+$router->get('/cuentas/{uid}', 'RequestBankController@ver_detalle_cuenta');
+
